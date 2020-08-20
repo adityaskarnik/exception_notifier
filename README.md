@@ -13,3 +13,13 @@ Why don't we think about a exception notifier. Wait, What?! Don't we already hav
 Well we can use them in each the cells and all that, but that's a mess in the notebook.
 
 We can have an extension, in the notebook where if there was an exception we will be notified like a normal notifier does.
+
+## Installation:
+
+```
+pip install jupyter
+```
+
+```
+pip install jupyter_contrib_nbextensions && jupyter contrib nbextensions install
+```
