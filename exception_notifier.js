@@ -43,10 +43,12 @@ define([
     }
     function checkPermission() {
       if (Notification.permission === "granted") {
+        // TODO add condition to check if exception has occurred
         showNotification();
      } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
           if (permission === "granted") {
+            // TODO add condition to check if exception has occurred
             showNotification();
           }
            console.log(permission);
