@@ -1,10 +1,21 @@
 define([
-    "jquery",
-    "base/js/namespace",
-    "require",
-  ], function ($, Jupyter, requirejs) {
+  'require',
+  'jquery',
+  'moment',
+  'base/js/namespace',
+  'base/js/events',
+  'notebook/js/codecell'
+  ], function (
+    requirejs,
+    $,
+    moment,
+    Jupyter,
+    events,
+    codecell) {
     "use strict";
   
+    var CodeCell = codecell.CodeCell;
+
     var params = {
       sticky: true,
       play_sound: true
@@ -44,11 +55,23 @@ define([
     function checkPermission() {
       if (Notification.permission === "granted") {
         // TODO add condition to check if exception has occurred
+        var old_get_callbacks = CodeCell.prototype.get_callbacks;
+        CodeCell.prototype.get_callbacks = function () {
+            var callbacks = old_get_callbacks.apply(this, arguments);
+            console.log("callbacks", callbacks);
+            var cell = this;
+            var prev_reply_callback = callbacks.shell.reply;
+            console.log("prev_reply_callback", prev_reply_callback);
+            callbacks.shell.reply = function (msg) {
+            return prev_reply_callback(msg);
+        };
+        return callbacks;
+          
+        };
         showNotification();
      } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
           if (permission === "granted") {
-            // TODO add condition to check if exception has occurred
             showNotification();
           }
            console.log(permission);
