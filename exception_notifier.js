@@ -151,16 +151,10 @@ define([
           console.log("HERE");
           console.log(el);
       });
-      events.on('unrecognized_output.OutputArea', function (evt, data) {
+      events.on('execute.CodeCell', function(evt, data) {
         // console.log('[evt]', evt.type, (new Date()).toISOString(), data);
-        console.log("unrecognized_output.OutputArea");
-      });
-      events.on('output_appended.OutputArea', function (evt, data) {
-        // console.log('[evt]', evt.type, (new Date()).toISOString(), data);
-        console.log("output_appended.OutputArea");
-      });
-      events.on(all_events.join(' '), function (evt, data) {
-        // showNotification();
+        console.log("execute.CodeCell", data);
+        console.log("execute.CodeCell", data.cell.output_area.outputs.[0]);
       });
         showNotification();
      } else if (Notification.permission !== "denied") {
