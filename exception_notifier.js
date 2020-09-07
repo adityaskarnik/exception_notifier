@@ -6,6 +6,7 @@ define([
   'base/js/events',
   'notebook/js/codecell',
   'notebook/js/outputarea',
+  'services/config',
   ], function (
     requirejs,
     $,
@@ -139,24 +140,23 @@ define([
         }
     };
   
-    function showNotification() {
+    function showNotification(evalue) {
       notify();
       const notification = new Notification("Exception Occurred", {
-        body: "Exception occurred in a cell. Please check"
-     })
+        body: evalue,
+        icon: "https://www.iconfinder.com/data/icons/miscellaneous-67-mix/168/objection_convulsions_exception_slander_exclusion_denigration_mudslinging-512.png"
+     });
     }
     function checkPermission() {
       if (Notification.permission === "granted") {
-        $('.cell .output_area .output_error').each(function (idx, el) {
-          console.log("HERE");
-          console.log(el);
-      });
       events.on('execute.CodeCell', function(evt, data) {
-        // console.log('[evt]', evt.type, (new Date()).toISOString(), data);
-        console.log("execute.CodeCell", data);
-        console.log("execute.CodeCell", data.cell.output_area.outputs.[0]);
+        var outputs = data.cell.output_area.outputs;
+        setTimeout(function() { 
+          if (data.cell.output_area.outputs[0].ename == 'NameError') {
+            showNotification(data.cell.output_area.outputs[0].evalue);
+          };
+        }, 1000);
       });
-        showNotification();
      } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
           if (permission === "granted") {
