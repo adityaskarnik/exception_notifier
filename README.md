@@ -1,6 +1,6 @@
 # Exception Notifier
 
-While working on our code in Jupyter Notebook we tend to forget after a while that we working actually running some code while there was an exception that interrupted the long running task. :angry::cry: 
+While working on our code in Jupyter Notebook we tend to forget after a while that we working, actually running some code, but there was an exception that interrupted the long running task. :angry::cry: 
 
 COMEON!!!!!! NOT FARE
 
@@ -23,3 +23,10 @@ pip install jupyter
 ```
 pip install jupyter_contrib_nbextensions && jupyter contrib nbextensions install
 ```
+
+Start up a Jupyter Notebook and navigate to the new Nbextensions tab:
+
+![Exception Notifier Screenshot](exception_notifier_screenshot.png)
+
+Enable the extensions you want and enjoy the productivity benefits.
+(If you don’t see a tab, open a notebook and click Edit > nbextensions config)
