@@ -24,7 +24,23 @@ pip install jupyter
 pip install jupyter_contrib_nbextensions && jupyter contrib nbextensions install
 ```
 
-Start up a Jupyter Notebook and navigate to the new Nbextensions tab:
+```
+pip show jupyter_contrib_nbextensions
+```
+
+Get the ``Location`` path from the pervious command
+
+Copy the ``exception_notifier`` folder to
+```
+site-packages/jupyter_contrib_nbextensions/nbextensions/
+```
+
+```
+jupyter contrib nbextensions install
+```
+
+
+Start up a ``jupyter notebook`` and navigate to the new Nbextensions tab:
 
 ![Exception Notifier Screenshot](exception_notifier_screenshot.png)
 
