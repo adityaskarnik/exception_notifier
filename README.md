@@ -46,3 +46,12 @@ Start up a ``jupyter notebook`` and navigate to the new Nbextensions tab:
 
 Enable the extensions you want and enjoy the productivity benefits.
 (If you don’t see a tab, open a notebook and click Edit > nbextensions config)
+
+
+## Donation
+
+If this page helps you reduce time to develop, you can buy me a cup of coffee :coffee:
+
+  
+
+[![paypal](https://cdn-images-1.medium.com/max/738/1*G95uyokAH4JC5Ppvx4LmoQ@2x.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZJM97M6KBLHZY)
