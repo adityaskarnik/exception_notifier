@@ -1,3 +1,7 @@
+[
+![adityakarnik](https://img.shields.io/badge/blog-website-yellowgreen)
+](https://adityakarnik.com)
+
 # Exception Notifier
 
 While working on our code in Jupyter Notebook we tend to forget after a while that we working, actually running some code, but there was an exception that interrupted the long running task. :angry::cry: 
