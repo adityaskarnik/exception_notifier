@@ -1,6 +1,6 @@
 [
 ![adityakarnik](https://img.shields.io/badge/blog-website-yellowgreen)
-](https://adityakarnik.com)
+](https://adityakarnik.com/blog/exception_notifier)
 
 # Exception Notifier
 
